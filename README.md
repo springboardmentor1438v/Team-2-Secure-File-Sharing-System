@@ -7,6 +7,9 @@ A high-performance, enterprise-grade secure file-sharing backend built with **Fa
 
 ## 🌟 Key Features
 
+| **Week 1** | **Project Foundation & Database Architecture** | Modular FastAPI setup, SQLAlchemy engine & connection pooling, centralized settings, database health check, CORS middleware. | `FastAPI`, `SQLAlchemy`, `PyMySQL`, `Pydantic Settings`, `app/main.py`, `app/database/` |
+| **Week 2** | **Authentication & Role-Based Access Control (RBAC)** | User schema & model, Bcrypt password hashing, stateless JWT token authentication, user registration, login, profile inspection, and admin guard rails. | `Passlib (Bcrypt)`, `python-jose`, `JWT`, `app/models/user.py`, `app/security/`, `app/dependencies/auth.py` |
+| **Week 3** | **Core File Management & Storage Architecture** | File metadata model, isolated storage directory management, 10MB quota validation, authenticated file listing, and secure deletion with disk cleanup. | `FastAPI UploadFile`, `app/models/file.py`, `app/services/file_service.py`, `app/routes/file_routes.py` |
 ### 🔐 1. End-to-End File Security & AES-256 Encryption (Week 4)
 - **Encryption at Rest**: Files uploaded to the server are immediately encrypted using **Fernet (AES-128 in CBC mode with HMAC-SHA256 authenticated encryption)** before touching disk storage.
 - **Unique Per-File Keys**: Each uploaded file is assigned its own cryptographically generated encryption key. Keys are managed securely and decoupled from the raw file payloads.
