@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+<<<<<<< HEAD
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database.database import engine, Base
@@ -54,3 +55,11 @@ def health():
         "status": "healthy"
     }
 
+=======
+
+app = FastAPI(title="Secure File Sharing System")
+
+@app.get("/")
+def read_root():
+    return {"message": "Secure file sharing system is running"}
+>>>>>>> ebe339e96cce524147f060ae52ba30293e6f52ae

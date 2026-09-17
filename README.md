@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Secure File Sharing System
 
 Infosys Springboard Internship Project – 8 Weeks
@@ -1235,3 +1236,6 @@ Project: Secure File Sharing System
 Duration: 8 Weeks
 
 Technology: Python + FastAPI + MySQL + HTML/CSS/JavaScript
+=======
+# Team-2-Secure-File-Sharing-System
+>>>>>>> ebe339e96cce524147f060ae52ba30293e6f52ae
