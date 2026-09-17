@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}{{ file['display_name'] }} · Vault{% endblock %}
+{% block content %}
+<h1>{{ file['display_name'] }}</h1>
+<p class="lede">
+  {{ (file['size_bytes'] / 1024) | round(1) }} KB · {{ file['content_type'] }} ·
+  SHA-256 {{ file['sha256'][:16] }}…
+</p>
+
+<div class="row">
+  <a class="primary" href="{{ url_for('files.download', file_id=file['id']) }}">Download</a>
+  <form method="post" action="{{ url_for('files.delete', file_id=file['id']) }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <button class="quiet danger" type="submit">Delete file</button>
+  </form>
+</div>
+
+<h2>Create a link</h2>
+<form method="post" action="{{ url_for('files.create_link', file_id=file['id']) }}" class="panel">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <div class="row">
+    <div class="field">
+      <label for="ttl">Expires after (hours)</label>
+      <input id="ttl" name="ttl_hours" type="number" min="1" max="{{ max_ttl }}" value="{{ default_ttl }}">
+    </div>
+    <div class="field">
+      <label for="cap">Download limit (optional)</label>
+      <input id="cap" name="max_downloads" type="number" min="1" placeholder="unlimited">
+    </div>
+    <div class="field">
+      <label for="pw">Link password (optional)</label>
+      <input id="pw" name="link_password" type="password" autocomplete="off">
+    </div>
+    <button class="primary" type="submit">Create link</button>
+  </div>
+  <p class="hint">The link is shown once after it is created. It is stored hashed, so it cannot be looked up again.</p>
+</form>
+
+<h2>Links to this file</h2>
+{% if links %}
+<table>
+  <thead><tr><th>Link</th><th>Status</th><th>Downloads</th><th>Expires</th><th></th></tr></thead>
+  <tbody>
+  {% for l in links %}
+    {% set live = not l['revoked'] and l['expires_at'] > now %}
+    <tr>
+      <td class="meta">{{ l['token_hint'] }}… {% if l['password_hash'] %}<span class="tag">password</span>{% endif %}</td>
+      <td>
+        {% if l['revoked'] %}<span class="tag tag-dead">revoked</span>
+        {% elif not live %}<span class="tag tag-dead">expired</span>
+        {% else %}<span class="tag tag-live">live</span>{% endif %}
+      </td>
+      <td class="meta">{{ l['download_count'] }}{% if l['max_downloads'] %} of {{ l['max_downloads'] }}{% endif %}</td>
+      <td class="meta">{{ l['expires_at'][:16] | replace('T', ' ') }}</td>
+      <td>
+        {% if live %}
+        <form method="post" action="{{ url_for('files.revoke_link', share_id=l['id']) }}">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="quiet danger" type="submit">Revoke</button>
+        </form>
+        {% endif %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty">No links yet. Create one above when you are ready to share this.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Activity · Vault{% endblock %}
+{% block content %}
+<h1>Activity</h1>
+<p class="lede">Every upload, link and download touching your files, newest first.</p>
+{% if events %}
+<table>
+  <thead><tr><th>When (UTC)</th><th>What</th><th>File</th><th>Who</th><th>Detail</th></tr></thead>
+  <tbody>
+  {% for e in events %}
+    <tr>
+      <td class="meta">{{ e['at'][:16] | replace('T', ' ') }}</td>
+      <td>{{ e['action'] }}</td>
+      <td class="meta">{{ e['target'] or '—' }}</td>
+      <td class="meta">{{ e['actor'] }} · {{ e['ip'] }}</td>
+      <td class="meta">{{ e['detail'] or '' }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty">Nothing recorded yet.</p>
+{% endif %}
+{% endblock %}

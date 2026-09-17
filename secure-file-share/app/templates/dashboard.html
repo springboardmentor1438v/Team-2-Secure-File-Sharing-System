@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Files · Vault{% endblock %}
+{% block content %}
+<h1>Your files</h1>
+<p class="lede">Upload a file, then create a link with an expiry, a download cap, or a password.</p>
+
+<form method="post" action="{{ url_for('files.upload') }}" enctype="multipart/form-data" class="panel row">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <div class="field">
+    <label for="file">Add a file</label>
+    <input id="file" name="file" type="file" required>
+  </div>
+  <button class="primary" type="submit">Upload</button>
+</form>
+
+{% if files %}
+<table>
+  <thead>
+    <tr><th>Name</th><th>Size</th><th>Added</th><th>Links</th><th></th></tr>
+  </thead>
+  <tbody>
+  {% for f in files %}
+    <tr>
+      <td><a class="filename" href="{{ url_for('files.detail', file_id=f['id']) }}">{{ f['display_name'] }}</a></td>
+      <td class="meta">{{ (f['size_bytes'] / 1024) | round(1) }} KB</td>
+      <td class="meta">{{ f['created_at'][:16] | replace('T', ' ') }}</td>
+      <td class="meta">
+        {% if f['active_links'] %}<span class="tag tag-live">{{ f['active_links'] }} live</span>
+        {% else %}<span class="tag">none</span>{% endif %}
+      </td>
+      <td><a href="{{ url_for('files.download', file_id=f['id']) }}">Download</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="empty">Nothing stored yet. Upload a file above to get started.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Link created · Vault{% endblock %}
+{% block content %}
+<h1>Link created</h1>
+<p class="lede">Copy it now. It is stored hashed, so this is the only time it can be shown.</p>
+
+<div class="linkbox">
+  <code id="share-link">{{ link }}</code>
+  <button class="quiet" type="button" id="copy" data-link="{{ link }}">Copy</button>
+</div>
+
+<p class="meta" style="margin-top:1rem">
+  For {{ file['display_name'] }} · expires {{ expires.strftime('%d %b %Y, %H:%M UTC') }}
+  {%- if limit %} · {{ limit }} download{{ '' if limit == 1 else 's' }} maximum{% endif %}
+  {%- if protected %} · password required{% endif %}
+</p>
+
+<p><a href="{{ url_for('files.detail', file_id=file['id']) }}">Back to {{ file['display_name'] }}</a></p>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

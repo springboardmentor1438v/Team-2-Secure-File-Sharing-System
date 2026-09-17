@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Create account · Vault{% endblock %}
+{% block content %}
+<h1>Create an account</h1>
+<p class="lede">One account holds your files and the links you hand out for them.</p>
+<form method="post" class="narrow">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required autofocus>
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="new-password" required minlength="12">
+    <p class="hint">At least 12 characters, mixing letters with numbers or symbols.</p>
+  </div>
+  <button class="primary" type="submit">Create account</button>
+  <p class="hint">Already registered? <a href="{{ url_for('auth.login') }}">Sign in</a>.</p>
+</form>
+{% endblock %}

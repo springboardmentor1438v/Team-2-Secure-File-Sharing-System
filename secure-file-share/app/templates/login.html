@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Sign in · Vault{% endblock %}
+{% block content %}
+<h1>Sign in</h1>
+<p class="lede">Your files are encrypted with a key this server never writes down in the clear.</p>
+<form method="post" class="narrow">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <input type="hidden" name="next" value="{{ next }}">
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required autofocus>
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required>
+  </div>
+  <button class="primary" type="submit">Sign in</button>
+  <p class="hint">No account yet? <a href="{{ url_for('auth.register') }}">Create one</a>.</p>
+</form>
+{% endblock %}

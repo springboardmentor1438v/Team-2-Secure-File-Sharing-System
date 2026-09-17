@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>{% block title %}Vault{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="masthead">
+  <a class="mark" href="{{ url_for('files.home') }}">
+    <span class="mark-glyph" aria-hidden="true"></span>
+    <span class="mark-name">Vault</span>
+  </a>
+  {% if user %}
+  <nav>
+    <a href="{{ url_for('files.dashboard') }}">Files</a>
+    <a href="{{ url_for('files.activity') }}">Activity</a>
+    <form method="post" action="{{ url_for('auth.logout') }}">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <button class="linkish" type="submit">Sign out</button>
+    </form>
+  </nav>
+  {% endif %}
+</header>
+
+<main>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul class="notices">
+        {% for category, message in messages %}
+          <li class="notice notice-{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+
+<footer>
+  Files are encrypted with AES-256-GCM before they touch the disk.
+  {% if user %}Signed in as {{ user['email'] }}.{% endif %}
+</footer>
+</body>
+</html>

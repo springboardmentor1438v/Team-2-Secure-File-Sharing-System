@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ share['display_name'] }} · Vault{% endblock %}
+{% block content %}
+<h1>{{ share['display_name'] }}</h1>
+<p class="lede">
+  {{ (share['size_bytes'] / 1024) | round(1) }} KB · shared with you
+  {%- if remaining is not none %} · {{ remaining }} download{{ '' if remaining == 1 else 's' }} left{% endif %}
+</p>
+
+{% if needs_password %}
+<form method="post" action="{{ url_for('shares.unlock', token=token) }}" class="narrow">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <div class="field">
+    <label for="password">This link is password protected</label>
+    <input id="password" name="password" type="password" autocomplete="off" required autofocus>
+  </div>
+  <button class="primary" type="submit">Unlock and download</button>
+</form>
+{% else %}
+<p><a class="primary" href="{{ url_for('shares.download', token=token) }}">Download file</a></p>
+<p class="meta">Expires {{ share['expires_at'][:16] | replace('T', ' ') }} UTC.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{ code }} · Vault{% endblock %}
+{% block content %}
+<h1>{{ code }}</h1>
+<p class="lede">{{ message }}</p>
+<p><a href="{{ url_for('files.home') }}">Back to your files</a></p>
+{% endblock %}
