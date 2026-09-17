@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display:flex;
+    background:#f5f7fb;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    background:#1e293b;
+    min-height:100vh;
+    color:white;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+.logo{
+    padding:25px;
+    font-size:24px;
+    font-weight:600;
+    text-align:center;
+}
+
+.logo i{
+    color:#4ade80;
+    margin-right:8px;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:20px 0;
+}
+
+.sidebar li{
+    margin:5px 0;
+}
+
+.sidebar li a{
+    display:block;
+    padding:14px 30px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.sidebar li.active,
+.sidebar li:hover{
+    background:#334155;
+}
+
+.sidebar i{
+    width:25px;
+}
+
+/* Main */
+
+.main-content{
+    margin-left:250px;
+    width:calc(100% - 250px);
+    padding:30px;
+}
+
+/* Top */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h2{
+    font-weight:600;
+}
+
+.user-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+}
+
+/* Grid */
+
+.shares-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
+    gap:20px;
+}
+
+/* Card */
+
+.share-card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.share-card h5{
+    margin-bottom:15px;
+    font-weight:600;
+    word-break:break-word;
+}
+
+.share-card p{
+    margin:8px 0;
+    font-size:14px;
+}
+
+/* Status */
+
+.status-active{
+    color:#16a34a;
+    font-weight:600;
+}
+
+.status-revoked{
+    color:#dc2626;
+    font-weight:600;
+}
+
+/* Button */
+
+.revoke-btn{
+    width:100%;
+    margin-top:15px;
+    border:none;
+    background:#ef4444;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.revoke-btn:hover{
+    background:#dc2626;
+}
+
+.revoke-btn:disabled{
+    background:#94a3b8;
+    cursor:not-allowed;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-content{
+    margin-left:220px;
+}
+
+.shares-grid{
+    grid-template-columns:1fr;
+}
+
+}

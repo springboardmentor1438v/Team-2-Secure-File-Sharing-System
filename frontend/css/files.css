@@ -1,0 +1,271 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    display:flex;
+    min-height:100vh;
+    color:#1f2937;
+}
+
+.sidebar{
+    width:260px;
+    background:#0f172a;
+    color:#fff;
+    padding:30px 20px;
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:45px;
+}
+
+.logo i{
+    color:#38bdf8;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:10px;
+}
+
+.sidebar a{
+    text-decoration:none;
+    color:#cbd5e1;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 18px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:#1e293b;
+    color:#fff;
+}
+
+.sidebar .active a{
+    background:#2563eb;
+    color:#fff;
+}
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:35px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h2{
+    font-size:32px;
+    font-weight:700;
+}
+
+.topbar p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+.user-box{
+    background:#fff;
+    padding:12px 22px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.user-box i{
+    font-size:24px;
+    color:#2563eb;
+}
+
+.toolbar{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.search-box{
+    flex:1;
+    position:relative;
+}
+
+.search-box i{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#64748b;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px 18px 14px 50px;
+    border:none;
+    border-radius:14px;
+    background:#fff;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    outline:none;
+}
+
+.toolbar select{
+    border:none;
+    outline:none;
+    background:#fff;
+    padding:14px 18px;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    min-width:170px;
+}
+
+.upload-btn{
+    background:#2563eb;
+    color:#fff;
+    padding:14px 22px;
+    border-radius:14px;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s;
+}
+
+.upload-btn:hover{
+    background:#1d4ed8;
+}
+
+.files-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+    gap:24px;
+}
+
+.file-card{
+    background:#fff;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.file-card:hover{
+    transform:translateY(-6px);
+}
+
+.file-icon{
+    width:70px;
+    height:70px;
+    border-radius:18px;
+    background:#e0ecff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+}
+
+.file-icon i{
+    font-size:34px;
+    color:#2563eb;
+}
+
+.file-name{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:8px;
+    word-break:break-word;
+}
+
+.file-info{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.file-actions{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.file-actions button{
+    border:none;
+    border-radius:10px;
+    padding:10px;
+    cursor:pointer;
+    transition:.3s;
+    color:#fff;
+}
+
+.download-btn{
+    background:#2563eb;
+}
+
+.rename-btn{
+    background:#f59e0b;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+.share-btn{
+    background:#10b981;
+}
+
+.version-btn{
+    background:#6366f1;
+    grid-column:span 2;
+}
+
+.file-actions button:hover{
+    opacity:.9;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+    width:90px;
+}
+
+.logo span,
+.sidebar a span{
+    display:none;
+}
+
+.main-content{
+    margin-left:90px;
+    width:calc(100% - 90px);
+}
+
+.toolbar{
+    flex-direction:column;
+    align-items:stretch;
+}
+
+}

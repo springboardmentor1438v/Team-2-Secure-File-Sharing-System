@@ -1,0 +1,139 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    display:flex;
+    background:#f5f7fb;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    background:#1f2937;
+    color:white;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:30px 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:45px;
+}
+
+.logo i{
+    color:#4f86ff;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:15px;
+}
+
+.sidebar a{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:white;
+    text-decoration:none;
+    padding:15px 18px;
+    border-radius:12px;
+    transition:.3s;
+    font-size:18px;
+}
+
+.sidebar a:hover,
+.sidebar .active a{
+    background:#4f86ff;
+}
+
+/* Main */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:40px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h2{
+    font-size:42px;
+    color:#222;
+}
+
+.topbar p{
+    color:#666;
+}
+
+.user-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:600;
+}
+
+.user-box i{
+    color:#4f86ff;
+    font-size:38px;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+thead{
+    background:#4f86ff;
+    color:white;
+}
+
+th,
+td{
+    padding:16px;
+    text-align:left;
+}
+
+tbody tr:nth-child(even){
+    background:#f8f8f8;
+}
+
+tbody tr:hover{
+    background:#eef4ff;
+}
+
+.success{
+    color:#28a745;
+    font-weight:bold;
+}
+
+.failed{
+    color:#dc3545;
+    font-weight:bold;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureFS | User Management</title>
+
+    <link rel="icon" href="../assets/images/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/users.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <span>SecureFS</span>
+
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="admin-dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="#">
+                <i class="fa-solid fa-users"></i>
+                User Management
+            </a>
+        </li>
+
+        <li>
+            <a href="#" id="logoutBtn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="main-content">
+
+    <header class="topbar">
+
+        <div>
+
+            <h2>User Management</h2>
+
+            <p>View all registered users</p>
+
+        </div>
+
+        <div class="user-box">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <span id="username">Loading...</span>
+
+        </div>
+
+    </header>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search username or email...">
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Username</th>
+
+                <th>Email</th>
+
+                <th>Role</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="usersTable">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="../js/users.js"></script>
+
+</body>
+
+</html>

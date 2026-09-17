@@ -1,0 +1,1713 @@
+/* =====================================================
+   SecureFS Login Page
+   Part 1 - Foundation
+   DO NOT MODIFY AFTER LOCKING
+===================================================== */
+
+/* ---------- RESET ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    font-size:16px;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0F172A;
+    color:#ffffff;
+    overflow:hidden;
+}
+
+/* ---------- VARIABLES ---------- */
+
+:root{
+
+    --primary:#2563EB;
+    --secondary:#3B82F6;
+    --dark:#0F172A;
+    --glass:rgba(255,255,255,.10);
+    --glass-border:rgba(255,255,255,.18);
+
+    --text:#ffffff;
+    --text-light:#dbeafe;
+
+    --radius:22px;
+
+}
+
+/* ---------- PAGE ---------- */
+
+.page{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background:
+    radial-gradient(circle at top left,#1e40af 0%,transparent 45%),
+    radial-gradient(circle at bottom right,#2563eb 0%,transparent 45%),
+    linear-gradient(135deg,#0F172A,#162554,#2147B8);
+
+}
+
+/* ---------- CENTER CONTAINER ---------- */
+
+.container{
+
+    width:100%;
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:0 32px;
+
+}
+
+/* ---------- MAIN AREA ---------- */
+
+.main{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:58% 42%;
+
+    align-items:center;
+
+    gap:50px;
+
+    min-height:0;
+
+}
+
+/* ---------- LINKS ---------- */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* ---------- BUTTON ---------- */
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+/* ---------- IMAGES ---------- */
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+/* =====================================================
+   SecureFS Login Page
+   Part 2 - Navbar
+   DO NOT MODIFY AFTER LOCKING
+===================================================== */
+
+/* ---------- HEADER ---------- */
+
+.header{
+
+    width:100%;
+    height:72px;
+
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ---------- NAVBAR ---------- */
+
+.navbar{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+/* ---------- LOGO ---------- */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+.logo img{
+
+    width:46px;
+
+    height:46px;
+
+    object-fit:contain;
+
+}
+
+.logo h1{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    letter-spacing:.5px;
+
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.nav-links{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:48px;
+
+}
+
+.nav-links a{
+
+    color:#dbeafe;
+
+    font-size:1.05rem;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    position:relative;
+
+}
+
+/* ---------- HOVER ---------- */
+
+.nav-links a:hover{
+
+    color:#ffffff;
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#60A5FA;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+    width:100%;
+
+}
+
+/* ---------- MOBILE MENU ---------- */
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:2rem;
+
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width:900px){
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+}
+
+
+/* =====================================================
+   SecureFS Login Page
+   Part 3 - Hero Layout & Left Section
+   DO NOT MODIFY AFTER LOCKING
+===================================================== */
+
+/* ---------- MAIN CONTENT ---------- */
+
+.main{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:30px 0;
+
+}
+
+/* ---------- LEFT PANEL ---------- */
+
+.hero{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+/* ---------- TITLE ---------- */
+
+.hero h2{
+
+    font-size:clamp(3rem,5vw,5rem);
+
+    line-height:1.08;
+
+    font-weight:800;
+
+    color:#ffffff;
+
+    margin-bottom:24px;
+
+    max-width:700px;
+
+}
+
+/* ---------- DESCRIPTION ---------- */
+
+.hero p{
+
+    font-size:1.25rem;
+
+    line-height:1.8;
+
+    color:#dbeafe;
+
+    max-width:650px;
+
+    margin-bottom:40px;
+
+}
+
+/* ---------- FEATURE AREA ---------- */
+
+.features{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* ---------- FEATURE CARD ---------- */
+
+.feature-card{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    padding:22px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:22px;
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s ease;
+
+}
+
+/* ---------- CARD HOVER ---------- */
+
+.feature-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:#60A5FA;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+/* ---------- ICON ---------- */
+
+.feature-icon{
+
+    width:72px;
+
+    height:72px;
+
+    flex-shrink:0;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.12);
+
+}
+
+.feature-icon img{
+
+    width:34px;
+
+    height:34px;
+
+}
+
+/* ---------- TEXT ---------- */
+
+.feature-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+}
+
+.feature-text h3{
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.feature-text p{
+
+    margin:0;
+
+    font-size:1rem;
+
+    line-height:1.6;
+
+    color:#dbeafe;
+
+    max-width:none;
+
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:1100px){
+
+    .main{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+        padding:20px 0;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+    .hero p{
+
+        max-width:700px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SecureFS Login Page
+   Part 4 - Login Card
+   DO NOT MODIFY AFTER LOCKING
+===================================================== */
+
+/* ---------- RIGHT PANEL ---------- */
+
+.login-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ---------- LOGIN CARD ---------- */
+
+.login-card{
+
+    width:100%;
+
+    max-width:440px;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:28px;
+
+    padding:40px 36px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.30);
+
+}
+
+/* ---------- LOGO ---------- */
+
+.login-logo{
+
+    width:82px;
+
+    height:82px;
+
+    margin:0 auto 24px;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    color:#ffffff;
+
+    font-size:2rem;
+
+}
+
+/* ---------- HEADING ---------- */
+
+.login-card h2{
+
+    text-align:center;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.login-card .subtitle{
+
+    text-align:center;
+
+    color:#dbeafe;
+
+    font-size:1rem;
+
+    margin-bottom:32px;
+
+}
+
+/* ---------- LABEL ---------- */
+
+.login-card label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+}
+
+/* ---------- INPUT BOX ---------- */
+
+.input-box{
+
+    display:flex;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+}
+
+.input-box i{
+
+    width:56px;
+
+    text-align:center;
+
+    color:#dbeafe;
+
+    font-size:1rem;
+
+}
+
+.input-box input{
+
+    flex:1;
+
+    border:none;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    padding:15px 8px;
+
+    font-size:1rem;
+
+    outline:none;
+
+}
+
+.input-box input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+/* ---------- PASSWORD BUTTON ---------- */
+
+.password-toggle{
+
+    width:56px;
+
+    border:none;
+
+    background:none;
+
+    color:#dbeafe;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.password-toggle:hover{
+
+    color:#ffffff;
+
+}
+
+/* ---------- OPTIONS ---------- */
+
+.login-options{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:24px;
+
+}
+
+.login-options label{
+
+    margin:0;
+
+    font-size:.92rem;
+
+    color:#dbeafe;
+
+}
+
+.login-options a{
+
+    color:#bfdbfe;
+
+    font-size:.92rem;
+
+    transition:.3s;
+
+}
+
+.login-options a:hover{
+
+    color:#ffffff;
+
+}
+
+/* ---------- LOGIN BUTTON ---------- */
+
+.login-btn{
+
+    width:100%;
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:15px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    background:linear-gradient(135deg,#2563EB,#3B82F6);
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(37,99,235,.35);
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.45);
+
+}
+
+
+/* =====================================================
+   SecureFS Login Page
+   Part 5 - Register Section & Footer
+   DO NOT MODIFY AFTER LOCKING
+===================================================== */
+
+/* ---------- REGISTER ---------- */
+
+.register-section{
+
+    margin-top:26px;
+
+    text-align:center;
+
+}
+
+.register-section p{
+
+    margin:0;
+
+    font-size:.95rem;
+
+    color:#dbeafe;
+
+}
+
+.register-section a{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    color:#ffffff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.register-section a:hover{
+
+    color:#60A5FA;
+
+}
+
+/* ---------- ALERT ---------- */
+
+.alert{
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:.95rem;
+
+    margin-bottom:18px;
+
+}
+
+/* ---------- LOADING ---------- */
+
+.spinner-border{
+
+    width:1rem;
+
+    height:1rem;
+
+    margin-left:10px;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+
+    width:100%;
+
+    height:42px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer p{
+
+    margin:0;
+
+    font-size:.90rem;
+
+    color:#dbeafe;
+
+    letter-spacing:.3px;
+
+}
+
+.footer span{
+
+    margin:0 10px;
+
+    color:#60A5FA;
+
+}
+
+/* ---------- SMALL HOVER EFFECT ---------- */
+
+.login-card{
+
+    transition:.35s ease;
+
+}
+
+.login-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 30px 70px rgba(0,0,0,.35);
+
+}
+
+
+/* =====================================================
+   SecureFS Login Page
+   Part 6 - Responsive & Animations
+   FINAL PART
+===================================================== */
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+.login-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+.hero{
+
+    animation:fadeLeft .8s ease;
+
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0F172A;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+/* ---------- LARGE LAPTOP ---------- */
+
+@media(max-width:1400px){
+
+    .container{
+
+        padding:0 28px;
+
+    }
+
+    .main{
+
+        gap:40px;
+
+    }
+
+}
+
+/* ---------- LAPTOP ---------- */
+
+@media(max-width:1100px){
+
+    .main{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+        padding:20px 0;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+    .hero p{
+
+        max-width:700px;
+
+    }
+
+    .login-section{
+
+        width:100%;
+
+    }
+
+}
+
+/* ---------- TABLET ---------- */
+
+@media(max-width:768px){
+
+    body{
+
+        overflow-y:auto;
+
+    }
+
+    .header{
+
+        height:68px;
+
+    }
+
+    .container{
+
+        padding:0 20px;
+
+    }
+
+    .hero{
+
+        display:none;
+
+    }
+
+    .main{
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        padding:30px 0;
+
+    }
+
+    .login-card{
+
+        width:100%;
+
+        max-width:430px;
+
+    }
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:480px){
+
+    .container{
+
+        padding:0 16px;
+
+    }
+
+    .login-card{
+
+        padding:28px 22px;
+
+        border-radius:20px;
+
+    }
+
+    .logo h1{
+
+        font-size:1.6rem;
+
+    }
+
+    .login-logo{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:1.6rem;
+
+    }
+
+    .login-card h2{
+
+        font-size:1.7rem;
+
+    }
+
+    .login-options{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:12px;
+
+    }
+
+    .login-btn{
+
+        padding:14px;
+
+    }
+
+    .footer{
+
+        height:auto;
+
+        padding:18px 0;
+
+        text-align:center;
+
+    }
+
+    .footer p{
+
+        line-height:1.6;
+
+    }
+
+}
+
+/* =====================================================
+   PATCH 1
+   Navbar Alignment
+===================================================== */
+
+.header{
+
+    padding:0 10px;
+
+}
+
+.logo{
+
+    flex:0 0 auto;
+
+}
+
+.navbar{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+.navbar a{
+
+    font-size:1.1rem;
+
+    font-weight:500;
+
+}
+
+.logo h1{
+
+    margin:0;
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+.logo i{
+
+    font-size:2rem;
+
+    color:#60A5FA;
+
+}
+
+/* =====================================================
+   PATCH 2
+   Hero Section Optimization
+===================================================== */
+
+.main{
+
+    gap:45px;
+
+    align-items:center;
+
+}
+
+.hero h2{
+
+    font-size:4rem;
+
+    line-height:1.08;
+
+    margin-bottom:18px;
+
+    max-width:620px;
+
+}
+
+.hero p{
+
+    font-size:1.15rem;
+
+    line-height:1.7;
+
+    max-width:580px;
+
+    margin-bottom:28px;
+
+}
+
+.features{
+
+    gap:14px;
+
+}
+
+.feature-card{
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+}
+
+.feature-icon{
+
+    width:62px;
+
+    height:62px;
+
+    border-radius:16px;
+
+}
+
+.feature-icon i{
+
+    font-size:1.4rem;
+
+}
+
+.feature-text h3{
+
+    font-size:1.3rem;
+
+    margin-bottom:4px;
+
+}
+
+.feature-text p{
+
+    font-size:.95rem;
+
+    line-height:1.45;
+
+}
+
+/* =====================================================
+   PATCH 3
+   Login Card Optimization
+===================================================== */
+
+.login-card{
+
+    max-width:430px;
+
+    padding:30px 32px;
+
+    border-radius:24px;
+
+}
+
+.login-logo{
+
+    width:72px;
+
+    height:72px;
+
+    margin:0 auto 18px;
+
+    border-radius:18px;
+
+}
+
+.login-card h2{
+
+    font-size:2.6rem;
+
+    margin-bottom:8px;
+
+}
+
+.login-card .subtitle{
+
+    font-size:1rem;
+
+    margin-bottom:24px;
+
+}
+
+.login-card label{
+
+    font-size:1rem;
+
+    margin-bottom:6px;
+
+}
+
+.input-box{
+
+    height:56px;
+
+    margin-bottom:16px;
+
+    border-radius:14px;
+
+}
+
+.input-box i{
+
+    width:50px;
+
+    font-size:1rem;
+
+}
+
+.input-box input{
+
+    padding:14px 6px;
+
+    font-size:1rem;
+
+}
+
+.password-toggle{
+
+    width:50px;
+
+    font-size:1rem;
+
+}
+
+.login-options{
+
+    margin:8px 0 20px;
+
+}
+
+.login-options label,
+
+.login-options a{
+
+    font-size:.92rem;
+
+}
+
+.login-btn{
+
+    padding:14px;
+
+    font-size:1rem;
+
+    border-radius:14px;
+
+}
+
+.register-section{
+
+    margin-top:20px;
+
+}
+
+.register-section p{
+
+    font-size:.95rem;
+
+}
+
+.register-section a{
+
+    margin-top:8px;
+
+    font-size:1rem;
+
+}
+
+/* =====================================================
+   PATCH 4
+   Final Layout Polish
+   FINAL PATCH
+===================================================== */
+
+/* ---------- FULL PAGE LAYOUT ---------- */
+
+html,
+body{
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+body{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ---------- CONTAINER ---------- */
+
+.container{
+
+    width:100%;
+
+    max-width:1800px;
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:22px 36px;
+
+}
+
+/* ---------- HEADER ---------- */
+
+.header{
+
+    flex-shrink:0;
+
+    height:72px;
+
+    margin-bottom:18px;
+
+}
+
+/* ---------- MAIN ---------- */
+
+.main{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    align-items:center;
+
+    gap:55px;
+
+    min-height:0;
+
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+/* ---------- LOGIN ---------- */
+
+.login-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.login-card{
+
+    width:100%;
+
+    max-width:430px;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer{
+
+    flex-shrink:0;
+
+    height:45px;
+
+    margin-top:10px;
+
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width:992px){
+
+    body{
+
+        overflow-y:auto;
+
+    }
+
+    .container{
+
+        height:auto;
+
+        min-height:100vh;
+
+        padding:20px;
+
+    }
+
+    .main{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+    .hero p{
+
+        max-width:700px;
+
+    }
+
+    .login-card{
+
+        max-width:500px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .header{
+
+        flex-direction:column;
+
+        height:auto;
+
+        gap:16px;
+
+    }
+
+    .navbar{
+
+        justify-content:center;
+
+        gap:26px;
+
+        flex-wrap:wrap;
+
+    }
+
+    .hero h2{
+
+        font-size:2.9rem;
+
+    }
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+    .feature-card{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .container{
+
+        padding:16px;
+
+    }
+
+    .hero{
+
+        display:none;
+
+    }
+
+    .login-card{
+
+        padding:26px 20px;
+
+    }
+
+    .logo h1{
+
+        font-size:2rem;
+
+    }
+
+    .navbar{
+
+        gap:18px;
+
+    }
+
+    .navbar a{
+
+        font-size:.95rem;
+
+    }
+
+}
+
+/* =====================================================
+   FINAL PATCH
+   Enable Vertical Scroll
+===================================================== */
+
+html,
+body{
+
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+
+}
+
+body{
+
+    display:block;
+
+}
+
+.container{
+
+    min-height:100vh;
+    height:auto;
+
+}

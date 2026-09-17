@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SecureFS | Admin Dashboard</title>
+
+    <link rel="icon"
+          href="../assets/images/logo.png">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        rel="stylesheet">
+
+    <!-- Admin Dashboard CSS -->
+    <link rel="stylesheet"
+          href="../css/admin-dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<aside class="sidebar">
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <span>SecureFS</span>
+
+    </div>
+
+
+    <!-- MENU -->
+
+    <ul>
+
+
+        <!-- DASHBOARD -->
+
+        <li class="active">
+
+            <a href="admin-dashboard.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+
+
+        <!-- USER FEATURES -->
+
+        <li>
+
+            <a href="upload.html">
+
+                <i class="fa-solid fa-upload"></i>
+
+                Upload File
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="files.html">
+
+                <i class="fa-solid fa-folder"></i>
+
+                My Files
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="folders.html">
+
+                <i class="fa-solid fa-folder-tree"></i>
+
+                My Folders
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="shared.html">
+
+                <i class="fa-solid fa-share-nodes"></i>
+
+                Shared With Me
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="my-shares.html">
+
+                <i class="fa-solid fa-share-from-square"></i>
+
+                My Shared Files
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SEPARATOR -->
+
+        <hr
+            style="
+                margin:18px 0;
+                border-color:#3b4a5a;
+            ">
+
+
+
+        <!-- ADMIN FEATURES -->
+
+        <li>
+
+            <a href="all-files.html">
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                All Files
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="users.html">
+
+                <i class="fa-solid fa-users"></i>
+
+                User Management
+
+            </a>
+
+        </li>
+
+
+        <li>
+
+            <a href="activity.html">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                Activity Logs
+
+            </a>
+
+        </li>
+
+        <li>
+
+             <a href="user-management.html">
+
+                  <i class="fa-solid fa-users"></i>
+
+                   Delete User
+
+            </a>
+
+        </li>
+
+
+
+        <!-- SEPARATOR -->
+
+        <hr
+            style="
+                margin:18px 0;
+                border-color:#3b4a5a;
+            ">
+
+
+
+        <!-- LOGOUT -->
+
+        <li>
+
+            <a href="#"
+               id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+
+    </ul>
+
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<main class="main-content">
+
+
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <header class="topbar">
+
+
+        <div>
+
+            <h2>
+
+                Admin Dashboard
+
+            </h2>
+
+
+            <p>
+
+                Secure File Sharing System Administration
+
+            </p>
+
+        </div>
+
+
+
+        <div class="user-box">
+
+            <i class="fa-solid fa-user-shield"></i>
+
+            <span id="username">
+
+                Loading...
+
+            </span>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+         ADMIN STATISTICS
+    ====================================================== -->
+
+    <section class="cards">
+
+
+
+        <!-- TOTAL USERS -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>
+
+                Total Users
+
+            </h3>
+
+            <h1 id="totalUsers">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- TOTAL FILES -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-file"></i>
+
+            <h3>
+
+                Total Files
+
+            </h3>
+
+            <h1 id="totalFiles">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- STORAGE USAGE -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-hard-drive"></i>
+
+            <h3>
+
+                Storage Usage
+
+            </h3>
+
+            <h1 id="storageUsage">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- TOTAL SHARES -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-share-nodes"></i>
+
+            <h3>
+
+                Total Shares
+
+            </h3>
+
+            <h1 id="totalShares">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- ACTIVE SHARES -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-link"></i>
+
+            <h3>
+
+                Active Shares
+
+            </h3>
+
+            <h1 id="activeShares">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- EXPIRED SHARES -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>
+
+                Expired Shares
+
+            </h3>
+
+            <h1 id="expiredShares">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- DOWNLOAD ACTIVITY -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-download"></i>
+
+            <h3>
+
+                Download Activity
+
+            </h3>
+
+            <h1 id="downloadActivity">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- FAILED LOGIN ATTEMPTS -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>
+
+                Failed Login Attempts
+
+            </h3>
+
+            <h1 id="failedLogins">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- SECURITY EVENTS -->
+
+        <div class="card">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <h3>
+
+                Security Events
+
+            </h3>
+
+            <h1 id="securityEvents">
+
+                --
+
+            </h1>
+
+        </div>
+
+
+    </section>
+
+
+
+</main>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="../js/admin-dashboard.js"></script>
+
+
+</body>
+
+</html>

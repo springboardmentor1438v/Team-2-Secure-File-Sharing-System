@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SecureFS | Dashboard</title>
+
+    <link rel="icon"
+          href="../assets/images/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="../css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>SecureFS</span>
+
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+
+                <a href="#">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+            
+
+            <li>
+
+                <a href="files.html">
+
+                    <i class="fa-solid fa-folder"></i>
+
+                    My Files
+
+                </a>
+
+            </li>
+
+            <li>
+                  <a href="my-shares.html">
+                      <i class="fa-solid fa-share-from-square"></i>
+                          My Shared Files
+                  </a>
+            </li>
+
+            <li>
+
+                <a href="folders.html">
+
+                    <i class="fa-solid fa-folder-tree"></i>
+
+                    Folders
+
+                </a>
+
+            </li>
+
+            <!-- <li>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-upload"></i>
+
+                    Upload File
+
+                </a>
+
+            </li> -->
+
+            <!-- <li>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-share-nodes"></i>
+
+                    Shared With Me
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+                    Activity
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li> -->
+
+            <li>
+
+                <a href="#"
+                   id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+            
+        </ul>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h2>
+
+                    Dashboard
+
+                </h2>
+
+                <p>
+
+                    Welcome back to SecureFS
+
+                </p>
+
+            </div>
+
+            <div class="top-right">
+
+                <button class="icon-btn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                </button>
+
+                <div class="profile">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="username">
+
+                        User
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="stats">
+
+            <div class="card">
+
+               <h5>Total Files</h5>
+
+                 <h2 id="totalFiles">
+                   --
+                </h2>
+
+            </div>
+
+            <div class="card">
+
+               <h5>Storage Usage</h5>
+
+                  <h2 id="storageUsage">
+                     --
+                 </h2>
+
+            </div>
+
+            <div class="card">
+
+               <h5>Shared Files</h5>
+
+                  <h2 id="sharedFiles">
+                    --
+                  </h2>
+
+            </div>
+            <div class="card">
+
+                 <h5>Shared With Me</h5>
+
+                    <h2 id="sharedWithMe">
+                       --
+                    </h2>
+
+            </div>
+
+        </section>
+
+</section>
+        <section class="content-grid">
+
+            <div class="content-card">
+
+                <h4>
+
+                    Recent Activity
+
+                </h4>
+
+                <div id="recentActivity">
+
+                    Loading...
+
+                </div>
+
+            </div>
+
+            <div class="content-card">
+
+                <h4>
+
+                    Most Downloaded Files
+
+                </h4>
+
+                <div id="mostDownloaded">
+
+                    Loading...
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

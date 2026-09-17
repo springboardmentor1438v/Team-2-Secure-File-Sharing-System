@@ -1,0 +1,19 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# VS Code Settings
+.vscode/
+
+#key.key
+venv/
+__pycache__/
+*.pyc
+security/key.key
+uploads/
