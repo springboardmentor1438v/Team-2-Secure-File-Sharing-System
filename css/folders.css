@@ -1,0 +1,279 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+html{
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    background:#0f172a;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:40px 0;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#2563eb;
+    border-radius:50%;
+    filter:blur(170px);
+    left:-120px;
+    top:-120px;
+    opacity:.40;
+    pointer-events:none;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#4f86ff;
+    border-radius:50%;
+    filter:blur(170px);
+    right:-120px;
+    bottom:-120px;
+    opacity:.35;
+    pointer-events:none;
+}
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:0 20px;
+}
+
+.card{
+    position:relative;
+    width:700px;
+    background:#1e293b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    z-index:10;
+    margin-bottom:40px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header i{
+    font-size:55px;
+    color:#4f86ff;
+}
+
+.header h2{
+    color:#fff;
+    margin-top:15px;
+    font-size:36px;
+}
+
+.header p{
+    color:#cbd5e1;
+    margin-top:8px;
+}
+
+.create-box{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.create-box input{
+    flex:1;
+    height:55px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+    background:#374151;
+    color:white;
+    padding:0 20px;
+    font-size:16px;
+}
+
+.create-box input::placeholder{
+    color:#cbd5e1;
+}
+
+.create-box button{
+    width:150px;
+    border:none;
+    border-radius:15px;
+    background:linear-gradient(135deg,#2563eb,#4f86ff);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.create-box button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 25px rgba(37,99,235,.45);
+}
+
+#foldersList{
+    width:100%;
+    max-height:none;
+    overflow:visible;
+}
+
+.folder-card{
+    background:#374151;
+    border-radius:15px;
+    padding:18px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+    width:100%;
+}
+
+.folder-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    color:white;
+    font-size:18px;
+    font-weight:500;
+    min-width:0;
+    word-break:break-word;
+}
+
+.folder-info i{
+    color:#4f86ff;
+    font-size:24px;
+    flex-shrink:0;
+}
+
+.actions{
+    display:flex;
+    gap:10px;
+    flex-shrink:0;
+}
+
+.actions button{
+    border:none;
+    padding:10px 16px;
+    border-radius:10px;
+    cursor:pointer;
+    color:white;
+    font-weight:600;
+    transition:.3s;
+}
+
+.rename-btn{
+    background:#f59e0b;
+}
+
+.rename-btn:hover{
+    background:#d97706;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+.backBtn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin-top:30px;
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+.backBtn:hover{
+    color:#4f86ff;
+}
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#475569;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#64748b;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:20px 0;
+    }
+
+    .container{
+        padding:0 12px;
+    }
+
+    .card{
+        width:100%;
+        padding:25px;
+        border-radius:20px;
+    }
+
+    .header h2{
+        font-size:30px;
+    }
+
+    .header i{
+        font-size:45px;
+    }
+
+    .create-box{
+        flex-direction:column;
+    }
+
+    .create-box button{
+        width:100%;
+        height:55px;
+    }
+
+    .folder-card{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .folder-info{
+        width:100%;
+    }
+
+    .actions{
+        width:100%;
+    }
+
+    .actions button{
+        flex:1;
+    }
+}

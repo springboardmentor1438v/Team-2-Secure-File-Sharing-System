@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureFS | Shared With Me</title>
+
+    <link rel="icon" href="../assets/images/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/shared.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-shield-halved"></i>
+
+        <span>SecureFS</span>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="files.html">
+
+                <i class="fa-solid fa-folder"></i>
+
+                My Files
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="upload.html">
+
+                <i class="fa-solid fa-upload"></i>
+
+                Upload
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="folders.html">
+
+                <i class="fa-solid fa-folder-tree"></i>
+
+                Folders
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="shared.html">
+
+                <i class="fa-solid fa-share-nodes"></i>
+
+                Shared With Me
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+<div class="main-content">
+
+    <header class="topbar">
+
+        <div>
+
+            <h2>Shared With Me</h2>
+
+            <p>Files shared by other users</p>
+
+        </div>
+
+        <div class="user-box">
+
+            <i class="fa-solid fa-user-circle"></i>
+
+            <span id="username">
+
+                Loading...
+
+            </span>
+
+        </div>
+
+    </header>
+
+    <div id="sharedContainer" class="shared-grid">
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../js/shared.js"></script>
+
+</body>
+
+</html>

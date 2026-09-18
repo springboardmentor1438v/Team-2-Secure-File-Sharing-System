@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SecureFS | Upload File</title>
+
+<link rel="icon" href="../assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/upload.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<div class="logo">
+
+<i class="fa-solid fa-cloud-arrow-up"></i>
+
+<h2>Upload File</h2>
+
+<p>Secure File Sharing System</p>
+
+</div>
+
+<form id="uploadForm">
+
+<div class="input-group">
+
+<label>Select Folder</label>
+
+<select id="folderSelect" required>
+
+<option value="">Loading folders...</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Select File</label>
+
+<input
+type="file"
+id="fileInput"
+required>
+
+</div>
+
+<button
+type="submit"
+class="upload-btn">
+
+<i class="fa-solid fa-upload"></i>
+
+Upload File
+
+</button>
+
+</form>
+
+<div class="progress-box">
+
+<div class="progress">
+
+<div
+class="progress-bar"
+id="progressBar">
+
+</div>
+
+</div>
+
+<p id="progressText">
+
+Waiting...
+
+</p>
+
+</div>
+
+<a
+href="dashboard.html"
+class="backBtn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back to Dashboard
+
+</a>
+
+</div>
+
+</div>
+
+<script src="../js/upload.js"></script>
+
+</body>
+
+</html>

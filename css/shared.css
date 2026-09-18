@@ -1,0 +1,160 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    display:flex;
+}
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#1f2937;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:25px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    margin-bottom:40px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+    color:#4f8cff;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin-bottom:10px;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:#d1d5db;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 18px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar ul li.active a,
+.sidebar ul li a:hover{
+    background:#4f8cff;
+    color:#fff;
+}
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:30px;
+}
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.topbar h2{
+    font-weight:700;
+}
+
+.topbar p{
+    color:#6b7280;
+}
+
+.user-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    font-size:17px;
+}
+
+.user-box i{
+    font-size:28px;
+    color:#4f8cff;
+}
+
+.shared-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+    gap:25px;
+}
+
+.shared-card{
+    background:#fff;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.shared-card:hover{
+    transform:translateY(-5px);
+}
+
+.file-icon{
+    font-size:50px;
+    color:#4f8cff;
+    margin-bottom:18px;
+}
+
+.file-name{
+    font-size:20px;
+    font-weight:700;
+    margin-bottom:18px;
+    word-break:break-word;
+}
+
+.file-info{
+    color:#6b7280;
+    margin-bottom:10px;
+    font-size:15px;
+}
+
+.download-btn{
+    width:100%;
+    margin-top:18px;
+    border:none;
+    border-radius:10px;
+    padding:12px;
+    background:#4f8cff;
+    color:#fff;
+    font-weight:600;
+    transition:.3s;
+}
+
+.download-btn:hover{
+    background:#356de6;
+}
+
+.empty-state{
+    width:100%;
+    text-align:center;
+    margin-top:120px;
+    color:#6b7280;
+}
+
+.empty-state i{
+    font-size:70px;
+    color:#4f8cff;
+    margin-bottom:20px;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SecureFS | Activity Logs</title>
+
+<link rel="icon" href="../assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/activity.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+<span>SecureFS</span>
+
+</div>
+
+<ul>
+
+<li>
+
+<a href="admin-dashboard.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="users.html">
+
+<i class="fa-solid fa-users"></i>
+
+User Management
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="activity.html">
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Activity Logs
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#" id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2>Activity Logs</h2>
+
+<p>System Activity History</p>
+
+</div>
+
+<div class="user-box">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span id="username">Loading...</span>
+
+</div>
+
+</header>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>User ID</th>
+
+<th>Action</th>
+
+<th>Resource</th>
+
+<th>Description</th>
+
+<th>Status</th>
+
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody id="logsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="../js/activity.js"></script>
+
+</body>
+
+</html>

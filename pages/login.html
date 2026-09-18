@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SecureFS | Login</title>
+
+    <!-- Favicon -->
+
+    <link rel="icon"
+          href="../assets/images/logo.png">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          rel="stylesheet">
+
+    <!-- Login CSS -->
+
+    <link rel="stylesheet"
+          href="../css/login.css">
+
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background">
+
+        <div class="shape shape1"></div>
+
+        <div class="shape shape2"></div>
+
+        <div class="shape shape3"></div>
+
+    </div>
+
+    <!-- Main Container -->
+
+    <div class="container">
+            <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h1>SecureFS</h1>
+
+        </div>
+
+        <nav class="navbar">
+
+            <a href="#"></a>
+
+            <a href="#"></a>
+
+            <a href="#"></a>
+
+            <a href="#"></a>
+
+        </nav>
+
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT START
+    ========================== -->
+
+    <main class="main">
+                <!-- =========================
+             LEFT SECTION
+        ========================== -->
+
+        <section class="hero">
+
+            <h2>
+
+                Advanced Secure
+                <br>
+                File Sharing
+                <br>
+                System
+
+            </h2>
+
+            <p>
+
+               
+
+            </p>
+
+            <div class="features">
+
+                <!-- Feature 1 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                    </div>
+
+                    <div class="feature-text">
+
+                        <h3>End-to-End Encryption</h3>
+
+                        <p>
+
+                            Every uploaded file is encrypted
+                            before storage ensuring complete
+                            privacy and protection.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Feature 2 -->
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-share-nodes"></i>
+
+                    </div>
+
+                    <div class="feature-text">
+
+                        <h3>Smart File Sharing</h3>
+
+                        <p>
+
+                            Share files securely with
+                            permission-based access,
+                            expiry dates and download limits.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- =========================
+             RIGHT SECTION
+        ========================== -->
+
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <div class="login-logo">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <h2>
+
+                    Welcome Back
+
+                </h2>
+
+                <p class="subtitle">
+
+                    Sign in to your SecureFS account
+
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="mb-3">
+
+                        <label for="Email">
+
+                            Email
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="email"
+                                id="username"
+                                name="username"
+                                placeholder="Enter your Email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label for="password">
+
+                            Password
+
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                required>
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="login-options">
+
+                        <div class="form-check">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="rememberMe">
+
+                            <label
+                                class="form-check-label"
+                                for="rememberMe">
+
+                                Remember Me
+
+                            </label>
+
+                        </div>
+
+                        <a href="forgot-password.html">Forgot Password?</a>
+
+                        
+
+                    </div>
+
+                    <div
+                        id="loginAlert"
+                        class="alert alert-danger d-none">
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                        id="loginBtn">
+
+                        <span id="loginText">
+
+                            Login
+
+                        </span>
+
+                        <span
+                            id="loginSpinner"
+                            class="spinner-border spinner-border-sm d-none">
+
+                        </span>
+
+                    </button>
+
+                </form>
+
+                <div class="register-section">
+
+                    <p>
+
+                        Don't have an account?
+
+                    </p>
+
+                    <a
+                        href="register.html"
+                        id="registerLink">
+
+                        Create an Account
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+        <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <p>
+
+            © 2026 SecureFS
+
+            <span>|</span>
+
+            Advanced Secure File Sharing System
+
+        </p>
+
+    </footer>
+        <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/api.js"></script>
+
+    <script src="../js/auth.js"></script>
+
+</div>
+
+</body>
+
+</html>

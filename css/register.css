@@ -1,0 +1,323 @@
+/* =====================================================
+   SecureFS Register Page
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    font-family:"Poppins",sans-serif;
+    background:#0F172A;
+    color:#ffffff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0F172A,#1E3A8A,#2563EB);
+}
+
+.shape{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.25;
+}
+
+.shape1{
+    width:320px;
+    height:320px;
+    background:#60A5FA;
+    top:-80px;
+    left:-80px;
+}
+
+.shape2{
+    width:260px;
+    height:260px;
+    background:#3B82F6;
+    right:-60px;
+    top:120px;
+}
+
+.shape3{
+    width:350px;
+    height:350px;
+    background:#2563EB;
+    bottom:-120px;
+    left:35%;
+}
+
+.container{
+    width:100%;
+    max-width:1800px;
+    min-height:100vh;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    padding:22px 36px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:75px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo i{
+    font-size:2rem;
+    color:#60A5FA;
+}
+
+.logo h1{
+    font-size:2.6rem;
+    font-weight:700;
+    margin:0;
+}
+
+.navbar{
+    display:flex;
+    gap:60px;
+}
+
+.navbar a{
+    color:#ffffff;
+    font-size:1rem;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    color:#60A5FA;
+}
+
+.main{
+    flex:1;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:50px;
+}
+
+.hero h2{
+    font-size:4rem;
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.hero p{
+    color:#dbeafe;
+    line-height:1.8;
+    margin-bottom:30px;
+    max-width:620px;
+}
+
+.features{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.feature-card{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    padding:18px;
+    background:rgba(255,255,255,.08);
+    border-radius:18px;
+    backdrop-filter:blur(12px);
+}
+
+.feature-icon{
+    width:60px;
+    height:60px;
+    border-radius:16px;
+    background:rgba(255,255,255,.12);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.3rem;
+    color:#60A5FA;
+}
+
+.feature-text h3{
+    font-size:1.2rem;
+    margin-bottom:4px;
+}
+
+.feature-text p{
+    margin:0;
+    color:#dbeafe;
+    font-size:.95rem;
+}
+
+.login-section{
+    display:flex;
+    justify-content:center;
+}
+
+.login-card{
+    width:100%;
+    max-width:440px;
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    padding:32px;
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.login-logo{
+    width:72px;
+    height:72px;
+    margin:auto;
+    border-radius:18px;
+    background:#2563EB;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:1.8rem;
+    margin-bottom:20px;
+}
+
+.login-card h2{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#dbeafe;
+    margin-bottom:24px;
+}
+
+.login-card label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:500;
+}
+
+.input-box{
+    display:flex;
+    align-items:center;
+    background:rgba(255,255,255,.08);
+    border-radius:14px;
+    margin-bottom:18px;
+    overflow:hidden;
+}
+
+.input-box i{
+    width:50px;
+    text-align:center;
+    color:#dbeafe;
+}
+
+.input-box input{
+    flex:1;
+    border:none;
+    background:transparent;
+    color:#ffffff;
+    padding:15px 8px;
+    outline:none;
+}
+
+.input-box input::placeholder{
+    color:#cbd5e1;
+}
+
+.login-btn{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:14px;
+    background:#2563EB;
+    color:#ffffff;
+    font-weight:600;
+    margin-top:10px;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    background:#1D4ED8;
+}
+
+.register-section{
+    text-align:center;
+    margin-top:24px;
+}
+
+.register-section p{
+    color:#dbeafe;
+    margin-bottom:8px;
+}
+
+.register-section a{
+    color:#60A5FA;
+    font-weight:600;
+}
+
+.footer{
+    text-align:center;
+    padding:18px 0;
+    color:#dbeafe;
+}
+
+.footer span{
+    margin:0 10px;
+    color:#60A5FA;
+}
+
+@media(max-width:992px){
+
+    .main{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero p{
+        margin:auto auto 30px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        display:none;
+    }
+
+    .container{
+        padding:20px;
+    }
+
+}
